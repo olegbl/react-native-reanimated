@@ -6,7 +6,6 @@
 
 #import <React/RCTLog.h>
 #import <React/RCTUIManager.h>
-#import "React/RCTComponentData.h"
 
 @implementation REAPropsNode
 {
