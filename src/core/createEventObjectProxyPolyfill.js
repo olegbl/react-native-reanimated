@@ -35,8 +35,10 @@ export default function createEventObjectProxyPolyfill() {
   };
   const traverse = obj => {
     for (const key in obj) {
-      traverse(obj[key]);
-      Object.assign(obj[key], { __isProxy: true });
+      if (typeof obj[key] == 'object') {
+        traverse(obj[key]);
+        Object.assign(obj[key], { __isProxy: true });
+      }
     }
   };
   traverse(nodesMap);
